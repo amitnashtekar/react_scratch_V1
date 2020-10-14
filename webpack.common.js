@@ -1,6 +1,7 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
 	entry: './src/index.js',
@@ -37,12 +38,11 @@ module.exports = {
 	},
 	resolve: {
 		alias: {
-			'@Assets': path.resolve(__dirname, 'src/assets'),
-			'@Components': path.resolve(__dirname, 'src/components/'),
-			'@Utilities': path.resolve(__dirname, 'src/utilities/')
+			'@Assets': path.resolve(__dirname, 'src/assets')
 		}
 	},
 	plugins: [
+		new Dotenv(),
 		new CleanWebpackPlugin(),
 		new htmlWebpackPlugin({
 			title: 'Clothy',

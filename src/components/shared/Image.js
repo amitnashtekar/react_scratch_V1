@@ -14,6 +14,7 @@ const Image = () => {
 			});
 		}
 	};
+	console.log('process.env.DB_KEY', process.env.DB_KEY);
 	return (
 		<div>
 			<div>{foo.bar()}</div>
