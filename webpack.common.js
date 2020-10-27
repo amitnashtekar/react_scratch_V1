@@ -10,6 +10,9 @@ module.exports = {
 		path: path.resolve(__dirname, 'dist'),
 		chunkFilename: '[name].bundle.js'
 	},
+	devServer: {
+		historyApiFallback: true
+	},
 	module: {
 		rules: [
 			{
@@ -38,7 +41,8 @@ module.exports = {
 	},
 	resolve: {
 		alias: {
-			'@Assets': path.resolve(__dirname, 'src/assets')
+			'@Assets': path.resolve(__dirname, 'src/assets'),
+			'@Components': path.resolve(__dirname, 'src/components')
 		}
 	},
 	plugins: [
